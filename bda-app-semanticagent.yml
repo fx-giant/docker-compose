@@ -1,17 +1,17 @@
 version: '3'
 
 services:
-bda-app-semanticagent:
-  image: '_docker_hub_iamge_url/bda-app-semanticagent:_image_version'
-  restart: always
-  environment:
-    - jobServiceUrl=http://_jobServiceUrl:8090'
-    - rabbitMqHost=_rabbitMqHost
-    - rabbitMqPort=5672
-    - rabbitMqName=_rabbitmp_user_name
-    - rabbitMqPassword=_rabbitmp_password
-    - missionControlServiceUrl=_mission_control_service_url
-    - region1=_region1
-  volumes:
-    - '/etc/hosts:/etc/hosts:rw'
-    - '/etc/localtime:/etc/localtime:rw'
+  bda-app-semanticagent:
+    image: '_docker_hub_iamge_url/bda-app-semanticagent:_image_version'
+    restart: always
+    environment:
+      - jobServiceUrl=http://_jobServiceUrl:8090'
+      - rabbitMqHost=_rabbitMqHost
+      - rabbitMqPort=5672
+      - rabbitMqName=_rabbitmp_user_name
+      - rabbitMqPassword=_rabbitmp_password
+      - missionControlServiceUrl=_mission_control_service_url
+      - region1=_region1
+    volumes:
+      - '/etc/hosts:/etc/hosts:rw'
+      - '/etc/localtime:/etc/localtime:rw'
