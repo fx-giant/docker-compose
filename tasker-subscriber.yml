@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+tasker-subscriber:
+  image: '_docker_hub_iamge_url/tasker-subscriber:_image_version'
+  restart: always
+  environment:
+    - missionControlServiceUrl=_mission_control_service_url
+    - webPort=8105
+    - dataSearchUrl=http://_data_service_ip:8095
+  volumes:
+    - '/etc/hosts:/etc/hosts:rw'
+    - '/etc/localtime:/etc/localtime:rw'
+    - '/opt/datasource:/opt/bda/datasource:rw'
