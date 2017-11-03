@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  bda-app-semantic:
+    restart: always
+    ports:
+      - '8091:8080/tcp'
+    environment:
+      - dataServiceUrl=http://_data_service_ip:8100
+      - logServiceUrl=http://_log_service_ip:8096
+      - searchServiceUrl=http://_data_search_ip:8095'
+      - semanticServiceHost=_semantic_service_ip
+      - semanticServicePort=8091
+      - jerseyHost=_redis_ip
+      - jerseyPort=6379
+      - orientdbConfigHost=_orientdb_host
+      - orientdbConfigPort=2424
+      - orientdbConfigDatabase=semantic
+      - orientdbConfigUser=_orientdb_user_name
+      - orientdbConfigPassword=_orientdb_password
+      - stagingHost=_postgres_ip
+      - stagingUserName=_postgres_user_name
+      - stagingPassword=_postgres_password
+      - stagingPort=3432
+      - stagingDefaultDatabase=postgres
+      - redisHost=_redis_ip
+      - redisPort=6379
+      - rabbitMqHost=_rabbitmp_ip
+      - rabbitMqPort=5672
+      - rabbitMqName=_rabbitmp_user_name
+      - rabbitMqPassword=_rabbitmp_password
+      - missionControlServiceUrl=_mission_control_service_url
+      - missionControlAccountUrl=_mission_control_account_url
+    memswap_limit: 0
+    labels:
+      aliyun.scale: '1'
+    shm_size: 0
+    image: '_docker_hub_iamge_url/bda-app-semantic:_image_version'
+    memswap_reservation: 0
+    volumes:
+      - '/etc/localtime:/etc/localtime:rw'
+      - '/etc/hosts:/etc/hosts:rw'
+    kernel_memory: 0
+    mem_limit: 0
