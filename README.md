@@ -20,4 +20,6 @@ use for hold all giant v2 java docker compose
    _dm_service_ip
    _mission_control_service_ip
    _region1
-  ```  
+   ```
+   
+4. now can use the file as compose-up already
