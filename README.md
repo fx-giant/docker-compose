@@ -21,6 +21,3 @@ use for hold all giant v2 java docker compose
    _mission_control_service_ip
    _region1
   ```
-   
-   
-   
