@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  bda-app-logging:
+    restart: always
+    ports:
+      - '8096:8080/tcp'
+    environment:
+      - loggingServiceHost=_log_service_ip
+      - loggingServicePort=8096
+      - jerseyHost=_redis_ip
+      - jerseyPort=6380
+      - eSearchHost=_logging_elastic_host
+      - eSearchPort=9300
+      - eSearchClusterName=loggingelasticsearch
+      - 'missionControlServiceUrl=_mission_control_service_url
+      - region1=_region1
+    image: '_docker_hub_iamge_url/bda-app-logging:_image_version'
+    volumes:
+      - '/etc/localtime:/etc/localtime:rw'
+      - '/etc/hosts:/etc/hosts:rw'
