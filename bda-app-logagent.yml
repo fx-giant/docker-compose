@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  bda-app-logagent:
+    image: '_docker_hub_iamge_url/bda-app-logagent:_image_version'
+    environment:
+      - rabbitMqHost=_rabbitmp_ip
+      - rabbitMqPort=5672
+      - rabbitMqUser=_rabbitmp_user_name
+      - rabbitMqPassword=_rabbitmp_password
+      - eSearchHost=_index_elastic_host
+      - eSearchPort=9300
+      - eSearchClusterName=indexelasticsearch
+      - missionControlServiceUrl=_mission_control_service_url
+      - region1=_region1
+      - environmentSite=SG_Alpha
+      - supportEmail=_email_sender
+      - recipientEmail1=_recipient_email1
+    restart: always
+    volumes:
+      - '/etc/localtime:/etc/localtime:rw'
+      - '/etc/hosts:/etc/hosts:rw'
