@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  bda-app-messagingagent:
+    restart: always
+    environment:
+      - messagingServiceUrl=http://_message_service_url:8097
+      - rabbitMqHost=_rabbitmp_ip
+      - rabbitMqPort=5672
+      - rabbitMqName=_rabbitmp_user_name
+      - rabbitMqPassword=_rabbitmp_password
+      - emailHost=_email_host
+      - emailPort=587
+      - emailAuth=true
+      - emailSender=_email_sender
+      - emailPassword=_email_password
+      - emailSSL=true
+      - emailTLS=true
+      - missionControlServiceUrl=_mission_control_service_url
+      - region1=_region1
+    image: '_docker_hub_iamge_url/bda-app-messagingagent:_image_version'
+    volumes:
+      - '/etc/localtime:/etc/localtime:rw'
+      - '/etc/hosts:/etc/hosts'
+      - '/opt/bda/datasource/:/opt/datasource/:rw'
