@@ -1,20 +1,17 @@
+version: '3'
 
-version:'3'
-
-service:
+services:
 bda-app-semanticagent:
-  image: 'docker.fusionexgiant.com:5043/bda-app-semanticagent:2.8.0.61'
+  image: '_docker_hub_iamge_url/bda-app-semanticagent:_image_version'
   restart: always
   environment:
-    - 'jobServiceUrl=http://47.88.232.124:8090'
-    - rabbitMqHost=172.21.246.158
+    - jobServiceUrl=http://_jobServiceUrl:8090'
+    - rabbitMqHost=_rabbitMqHost
     - rabbitMqPort=5672
-    - rabbitMqName=bdaservice
-    - rabbitMqPassword=P@$$w0rd123
-    - 'missionControlServiceUrl=http://172.21.246.156:81/WebAPIs/MissionControl/api/Settings/Region/SG/Computed/'
-    - region1=SG
-  labels:
-    aliyun.scale: '1'
+    - rabbitMqName=_rabbitmp_user_name
+    - rabbitMqPassword=_rabbitmp_password
+    - missionControlServiceUrl=_mission_control_service_url
+    - region1=_region1
   volumes:
     - '/etc/hosts:/etc/hosts:rw'
     - '/etc/localtime:/etc/localtime:rw'
