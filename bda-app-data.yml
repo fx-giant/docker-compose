@@ -2,26 +2,26 @@ version: '3'
 
 services:
 bda-app-data:
-  image: 'docker.fusionexgiant.com:5043/bda-app-data:2.8.0.61'
+  image: '_docker_hub_iamge_url/bda-app-data:_image_version'
   ports:
-    - '8100:8080/tcp'
+    - 8100:8080/tcp'
   restart: always
   environment:
-    - 'logServiceUrl=http://47.88.232.124:8096'
-    - dataServiceHost=47.88.232.124
+    - logServiceUrl=http://_log_service_ip:8096'
+    - dataServiceHost=_data_service_ip
     - dataServicePort=8100
-    - jerseyHost=172.21.246.158
+    - jerseyHost=_redis_ip
     - jerseyPort=6380
-    - stagingHost=rm-gs50yh209c7fj0d23.pgsql.singapore.rds.aliyuncs.com
-    - stagingUserName=bdaservice
-    - stagingPassword=P@$$w0rd123
-    - stagingPort=3432
+    - stagingHost=_postgres_ip
+    - stagingUserName=_postgres_user_name
+    - stagingPassword=_postgres_password
+    - stagingPort=_postgres_port
     - stagingDefaultDatabase=postgres
-    - 'semanticServiceUrl=http://47.88.232.124:8091'
-    - 'giantServiceEndPointUrl=http://172.21.246.156/WebAPIs/GiantService'
-    - 'dmServiceUrl=http://47.88.232.124:8099'
-    - 'missionControlServiceUrl=http://172.21.246.156:81/WebAPIs/MissionControl/api/Settings/Region/SG/Computed/'
-    - region1=SG
+    - semanticServiceUrl=http://_semantic_service_ip:8091
+    - giantServiceEndPointUrl=http://_giant_service_ip/WebAPIs/GiantService
+    - dmServiceUrl=http://_dm_service_ip:8099'
+    - missionControlServiceUrl=_mission_control_service_ip
+    - region1=_region1
   volumes:
     - '/etc/hosts:/etc/hosts:rw'
     - '/etc/localtime:/etc/localtime:rw'
