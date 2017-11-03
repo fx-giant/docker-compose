@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  bda-app-search:
+    image: '_docker_hub_iamge_url/bda-app-search:_image_version'
+    ports:
+      - '8095:8080/tcp'
+    restart: always
+    environment:
+      - dataServiceUrl=http://_data_service_ip:8100
+      - semanticServiceUrl=http://_semantic_service_ip:8091
+      - logServiceUrl=http://_log_service_ip:8096
+      - searchServiceHost=_data_search_ip
+      - searchServicePort=8094
+      - jerseyHost=_redis_ip
+      - jerseyPort=6380
+      - eSearchHost=_index_elastic_host
+      - eSearchPort=9300
+      - eSearchClusterName=indexelasticsearch
+      - missionControlServiceUrl=_mission_control_service_url
+      - region1=_region1
+    volumes:
+      - '/etc/hosts:/etc/hosts:rw'
+      - '/etc/localtime:/etc/localtime:rw'
