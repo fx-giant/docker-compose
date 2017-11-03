@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  bda-app-messaging:
+    restart: always
+    ports:
+      - '8097:8080/tcp'
+    environment:
+      - logServiceUrl=_log_service_ip:8096
+      - messagingServiceHost=_message_service_ip
+      - messagingServicePort=8097
+      - jerseyHost=_redis_ip
+      - jerseyPort=6380
+      - pathMessagingStorage=opt/bda/messaging/
+      - mongoConnectionString=_mongodb_connectionstring
+      - redisHost=_redis_ip
+      - redisPort=6379
+      - rabbitMqHost=_rabbitmp_ip
+      - rabbitMqPort=5672
+      - rabbitMqName=_rabbitmp_user_name
+      - rabbitMqPassword=_rabbitmp_password
+      - missionControlServiceUrl=_mission_control_service_url
+      - region1=_region1
+    image: '_docker_hub_iamge_url/bda-app-messaging:_image_version'
+    volumes:
+      - '/etc/localtime:/etc/localtime:rw'
+      - '/etc/hosts:/etc/hosts:rw'
