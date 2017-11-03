@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  lucy:
+    image: '_docker_hub_iamge_url/lucy:_image_version'
+    ports:
+      - '8081:8081/tcp'
+    restart: always
+    environment:
+      - missionControlServiceUrl=_mission_control_service_url
+      - experimentDateTime=on
+      - semanticServiceUrl=http://_semantic_service_ip:8091'
+      - eSearchHost=_index_elastic_host
+      - eSearchPort=9300
+      - eSearchClusterName=indexelasticsearch
+      - lucyServicePort=8081
+    volumes:
+      - '/etc/hosts:/etc/hosts:rw'
+      - '/etc/localtime:/etc/localtime:rw'
