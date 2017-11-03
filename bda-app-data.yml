@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+bda-app-data:
+  image: 'docker.fusionexgiant.com:5043/bda-app-data:2.8.0.61'
+  ports:
+    - '8100:8080/tcp'
+  restart: always
+  environment:
+    - 'logServiceUrl=http://47.88.232.124:8096'
+    - dataServiceHost=47.88.232.124
+    - dataServicePort=8100
+    - jerseyHost=172.21.246.158
+    - jerseyPort=6380
+    - stagingHost=rm-gs50yh209c7fj0d23.pgsql.singapore.rds.aliyuncs.com
+    - stagingUserName=bdaservice
+    - stagingPassword=P@$$w0rd123
+    - stagingPort=3432
+    - stagingDefaultDatabase=postgres
+    - 'semanticServiceUrl=http://47.88.232.124:8091'
+    - 'giantServiceEndPointUrl=http://172.21.246.156/WebAPIs/GiantService'
+    - 'dmServiceUrl=http://47.88.232.124:8099'
+    - 'missionControlServiceUrl=http://172.21.246.156:81/WebAPIs/MissionControl/api/Settings/Region/SG/Computed/'
+    - region1=SG
+  volumes:
+    - '/etc/hosts:/etc/hosts:rw'
+    - '/etc/localtime:/etc/localtime:rw'
