@@ -12,9 +12,7 @@ services:
       - logServiceUrl=http://_log_service_ip:8096
       - searchServiceHost=_data_search_ip
       - searchServicePort=8094
-      - jerseyHost=_redis_ip
-      - jerseyPort=6380
-      - eSearchHost=_index_elastic_host
+      - eSearchHost=_index_elastic_host 
       - eSearchPort=9300
       - eSearchClusterName=indexelasticsearch
       - missionControlServiceUrl=_mission_control_service_url

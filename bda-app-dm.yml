@@ -7,19 +7,7 @@ services:
       - '8099:8080/tcp'
     restart: always
     environment:
-      - logServiceUrl=http://_log_service_ip:8096
       - semanticServiceUrl=http://_semantic_service_ip:8091
-      - dmServiceHost=_dm_service_ip
-      - dmServicePort=8099
-      - jerseyHost=_redis_ip
-      - jerseyPort=6380
-      - orientdbConfigHost=_orientdb_host 
-      - orientdbConfigPort=2424
-      - orientdbConfigDatabase=semantic
-      - orientdbConfigUser=_orientdb_user_name
-      - orientdbConfigPassword=_orientdb_password
-      - redisHost=_redis_ip
-      - redisPort=6379
       - missionControlServiceUrl=_mission_control_service_url
     volumes:
       - '/etc/hosts:/etc/hosts:rw'

@@ -4,14 +4,6 @@ services:
   auditlog:
     image: '_docker_hub_iamge_url/bda-app-auditlog:_image_version'
     environment:
-      - logServiceUrl=http://_log_service_ip:8096
-      - auditlogServiceHost=_audit_log_ip
-      - auditlogServicePort=8102
-      - jerseyHost=_redis_ip
-      - jerseyPort=6380
-      - eSearchHost=_logging_elastic_host
-      - eSearchPort=9300
-      - eSearchClusterName=loggingelasticsearch
       - missionControlServiceUrl=_mission_control_service_url
     restart: always
     volumes:

@@ -9,7 +9,7 @@ services:
     environment:
       - missionControlServiceUrl=_mission_control_service_url
       - experimentDateTime=on
-      - semanticServiceUrl=http://_semantic_service_ip:8091'
+      - semanticServiceUrl=http://_semantic_service_ip:8091
       - eSearchHost=_index_elastic_host
       - eSearchPort=9300
       - eSearchClusterName=indexelasticsearch

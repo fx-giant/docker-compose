@@ -7,7 +7,7 @@ services:
       - '8017:8017/tcp'
     restart: always
     environment:
-      - semanticServiceUrl=http://_semantic_service_ip:8091'
+      - semanticServiceUrl=http://_semantic_service_ip:8091
       - applicationWebRootPath=_applicationWebRootPath
       - orientDbHostConfig=_orientdb_host
       - orientDbPortConfig=2424
